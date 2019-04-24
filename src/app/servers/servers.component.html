@@ -1,0 +1,10 @@
+<p> List of servers with their id and status : </p>
+
+<input type="text" class="form-control" (input)="onUpdateServername($event)">
+<button class="btn btn-primary" [disabled]="!isAddServerBtnDisabled" (click)="onCreateServer()">Add Server</button>
+<p>{{ severCreationStatus }}</p>
+<hr>
+<app-server></app-server>
+<app-server></app-server>
+<!-- <div class="app-server"></div>
+<div class="app-server"></div> -->
