@@ -37,3 +37,33 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ** `{{ severCreationStatus }}` -- String interpolation
 * Event binding:
 ** `(click)="onCreateServer()">` -- use `()` brackets
+* Two way binding 
+** `[()]` -- property and event
+
+* Directives
+# Structural Directive --- add aelement to DOM.
+ngIf
+```
+<p *ngIf="serverCreated; else noServer">Server was created  with name : {{ serverName }}</p>
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
+```
+ngFor
+```
+<p *ngFor="let current of currents; let i = index">
+1. currents is a variable (list) in the component
+2. current will be looped object.
+3. index is angular variable holding index of the loop.
+4. i can be furhter used in ngStyle or ngClass
+```
+# Attribute Directive --- change the element they are placed on.
+Loading the style as per condition in the function.
+
+```
+<p [ngStyle]="{ backgroundColor: getColor() }">
+```
+Loading the css class as per condition in the function.
+```
+<p [ngClass]="{ online: getServerStatus() === 'online' }">
+```
